@@ -16,18 +16,18 @@ function getUserVideos(email) {
   });
 }
 function videoDetails(video) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("title of the video");
-          }, 1000);
-    })
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("title of the video");
+    }, 1000);
+  });
 }
 
 async function displayUser() {
-    const loggedUser = await loginUser("ed", 12345);
-    const videos = await getUserVideos(loggedUser.userEmail);
-    const detail = await videoDetails(videos[0]);
-    console.log(detail);
+  const loggedUser = await loginUser("ed", 12345);
+  const videos = await getUserVideos(loggedUser.userEmail);
+  const detail = await videoDetails(videos[0]);
+  console.log(detail);
 }
 displayUser();
 console.log("Finish");
